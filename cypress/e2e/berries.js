@@ -11,6 +11,7 @@ describe("Pokémon Berries API Tests", () => {
       url: baseUrl + endpoint,
       headers: {
         accept: "text/html",
+        accept: "application/json"
       },
       qs: {},
     }).then((response) => {
@@ -34,6 +35,8 @@ describe("Pokémon Berries API Tests", () => {
       url: baseUrl + endpoint,
       headers: {
         accept: "text/html",
+        accept: "application/json"
+
       },
       qs: {},
     }).then((response) => {
@@ -56,6 +59,8 @@ describe("Pokémon Berries API Tests", () => {
       url: baseUrl + endpoint,
       headers: {
         accept: "text/html",
+        accept: "application/json"
+
       },
       qs: {},
     }).then((response) => {
@@ -72,6 +77,4 @@ describe("Pokémon Berries API Tests", () => {
       expect(response.body.soil_dryness).to.eq(10);
     });
   });
-
-  
 });

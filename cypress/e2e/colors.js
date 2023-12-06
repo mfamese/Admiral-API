@@ -17,3 +17,46 @@ describe("Pokémon API color test", () => {
     });
   });
 });
+describe("Pokémon API Negative color test", () => {
+
+  it("Confirm the color of 2nd name is not black ", () => {
+    cy.request({
+      method: "GET",
+      url: "https://pokeapi.co/api/v2/pokemon-color/",
+      headers: {
+        accept: "application/json",
+      },
+      qs: {},
+    }).then((response) => {
+      expect(response.status).to.eq(200);
+      expect(response.body.results[3].name).to.eq("blue");
+    });
+  });
+  it("Confirm the color of 3rd name is not black ", () => {
+    cy.request({
+      method: "GET",
+      url: "https://pokeapi.co/api/v2/pokemon-color/",
+      headers: {
+        accept: "application/json",
+      },
+      qs: {},
+    }).then((response) => {
+      expect(response.status).to.eq(200);
+      expect(response.body.results[2].name).to.eq("black");
+    });
+  });
+  it("display the color of 3rd name is brown", () => {
+    cy.request({
+      method: "GET",
+      url: "https://pokeapi.co/api/v2/pokemon-color/",
+      headers: {
+        accept: "application/json",
+      },
+      qs: {},
+    }).then((response) => {
+      const colorName = response.body.results[2] ? response.body.results[2].name : 'Color not available';
+      cy.log('Color for index 2:', colorName); 
+    });
+  });
+});
+

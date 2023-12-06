@@ -1,1 +1,1 @@
-# Pokemon-API
+# Admiral-API
